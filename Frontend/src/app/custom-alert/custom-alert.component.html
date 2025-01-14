@@ -1,0 +1,27 @@
+<div class="alert-overlay">
+  <div class="alert-box">
+    <h2>{{ title }}</h2>
+    <p>{{ message }}</p>
+<!--    <label for="userInput">Enter something:</label>-->
+    <input id="userInput" [(ngModel)]="userInput" type="text" placeholder="Imię i nazwisko" />
+<!--    <input-->
+<!--      *ngIf="showInput"-->
+<!--      [(ngModel)]="userInput"-->
+<!--      type="text"-->
+<!--      placeholder="State your name for registration"-->
+<!--    />-->
+    <br>
+    <br>    <br>
+    <div class="alert-actions">
+      <button type=button (click)="onCancel()">Zamknij okno</button>
+      <button type = button (click)="onConfirm()">Potwierdź rezerwację</button>
+    </div>
+  <br>
+  -----------------------------------------------------------------
+  <br>
+    <div class="alert-actions">
+      <button type=button (click)="onEdit()">Edytuj rezerwację</button>
+      <button type=button (click)="onDelete()">Usuń rezerwację</button>
+    </div>
+  </div>
+</div>
