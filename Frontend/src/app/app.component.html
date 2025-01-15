@@ -1,3 +1,9 @@
+<alert></alert>
 <div class="calendar">
   <full-calendar [options]="calendarOptions"></full-calendar>
 </div>
+<button type = button (click)="showAlert(alertTypes.successs,'Twoja rezerwacja została potwierdzona. Zostało wysłane potwierdzenie SMS o rezerwacji.')">Potwierdzenie rezerwacji</button>
+<button type = button (click)="showAlert(alertTypes.info,'Rezerwacja została zmieniona. Użytkownik otrzyma potwiedzenie SMS o wprowadzonej zmianie.')">Edycja administratora</button>
+<button type = button (click)="showAlert(alertTypes.danger,'Rezerwacja została anulowana. Użytkownik otrzyma potwierdzenie SMS o anulowanej rezerwacji.')">Anulowanie administratora</button>
+
+

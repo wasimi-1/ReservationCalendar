@@ -6,7 +6,10 @@ import {RepositoryService} from './services/repository.service';
 import interactionPlugin from '@fullcalendar/interaction';
 import {CustomAlertComponent} from "./custom-alert/custom-alert.component";
 import {MatDialog} from "@angular/material/dialog";
-import { Router } from '@angular/router';
+import {RouterOutlet } from '@angular/router';
+import { AlertComponent } from "./alert/alert.component";
+import { AlertService } from './services/alert.service';
+import { AlertTypeEnum } from './alert/types/alertType.enum';
 
 
 
@@ -14,11 +17,14 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [FullCalendarModule],
+  imports: [FullCalendarModule, AlertComponent,RouterOutlet, AlertComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
+
+
 export class AppComponent {
+  alertTypes = AlertTypeEnum; 
   title = 'ReservationCalendar';
   events: any[] = [];
 
@@ -44,7 +50,7 @@ export class AppComponent {
   };
 
 
-  constructor(private repositoryService: RepositoryService, private dialog: MatDialog) {
+  constructor(private repositoryService: RepositoryService, private dialog: MatDialog, private alertService: AlertService) {
   }
 
 
@@ -100,5 +106,12 @@ export class AppComponent {
     });
 
   }
+
+  showAlert(type: AlertTypeEnum, text: string){
+    this.alertService.setAlert({
+      type,
+      text,
+    });
+}
 }
 

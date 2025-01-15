@@ -43,7 +43,7 @@ export class CustomAlertComponent {
     // console.log(this.userInput);
     // this.repositoryService.updateEvent({title: 'PP', start: this.data.event.start, end: this.data.event.end, Identifier: this.data.event.Identifier}).subscribe();
     // window.location.reload();
-    alert(this.userInput + ' - Twoja rezerwacja została potwierdzona. Zostało wysłane potwierdzenie SMS');
+    alert(this.userInput + ' - Twoja rezerwacja została potwierdzona. Zostało wysłane potwierdzenie SMS o rezerwacji.');
       console.log("update");
       this.dialogRef.close(this.userInput);
   }
@@ -53,7 +53,7 @@ export class CustomAlertComponent {
     console.log(this.data.userInput);
     console.log(this.userInput);
     console.log("edit");
-    alert("Rezerwacja została zmieniona. Użytkownik: "+this.userInput+" otrzyma potwiedzenie SMS"); 
+    alert("Rezerwacja została zmieniona. Użytkownik: "+this.userInput+" otrzyma potwiedzenie SMS o wprowadzonej zmianie."); 
     this.dialogRef.close(this.userInput);
   }
 
@@ -62,7 +62,7 @@ export class CustomAlertComponent {
     console.log(this.data.userInput);
     console.log(this.userInput);
     console.log("delete");
-    alert("Rezerwacja została anulowana")
+    alert("Rezerwacja została anulowana. Użytkownik: "+ this.userInput +" otrzyma potwierdzenie SMS o anulowanej rezerwacji.")
     this.dialogRef.close(this.userInput);
   }
 
